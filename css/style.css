@@ -202,7 +202,6 @@ header .header-wrapper .header-icons .profile-img{
 .swiper-btn-prev{
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
     border-radius: 50%;
     background-color:rgb(253, 253, 253);
