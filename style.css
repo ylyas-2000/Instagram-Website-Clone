@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --bg-color: #eee;
+    --box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    position: relative;
+}
+
+
+/* header section starts */
+header {
+    width: 100%;
+    padding: 1.3rem 0;
+    border-bottom: .1rem solid rgba(0,0,0,0.15);
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header .header-wrapper {
+    width: 955px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .header-wrapper img {
+    width: 11rem;
+    cursor: pointer;
+}
+
+header .header-wrapper .header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: -15rem;
+}
+
+header .header-wrapper .header-search input {
+    width: 27rem;
+    padding: 0.9rem;
+    padding-left: 4rem;
+    background: var(--bg-color);
+    border-radius: 0.7rem;
+    font-size: 1.5rem;
+}
+
+header .header-wrapper .header-search input::placeholder {
+    font-size: 1.7rem;
+    color: gray;
+}
+
+header .header-wrapper .header-search label {
+    display: block;
+    color: gray;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 1.3rem;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+header .header-wrapper .header-search label:hover {
+    color: #f77737;
+}
+
+header .header-wrapper .header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .header-wrapper .header-icons img {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 2.4rem;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+header .header-wrapper .header-icons .profile-img {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+}
+/* header section ends */
+
+
+
+.container .container-wrapper {
+    position: relative;
+    top: 6rem;
+    width: 827px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .container-wrapper .container-left {
+    width: 58%;
+    display: block;
+    margin: 0;
+}
+
+.container .container-wrapper .container-left .container-stories .swiper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1rem 1rem;
+    border: .1rem solid rgb(208, 206, 206);
+    position: relative;
+}
+
+.container .container-wrapper .container-left .container-stories .swiper .swiper-slide {
+    text-align: center;
+    margin: 1rem 0;
+    cursor: pointer;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.container .container-wrapper .container-left .container-stories .swiper .swiper-slide div {
+    display: block;
+    margin: auto;
+}
+
+.container .container-wrapper .container-left .container-stories .swiper .swiper-slide div div {
+    width: 5.9rem;
+    height: 5.9rem;
+    border-radius: 50%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#fd1d1d, #f77737, #ffdc80);
+    margin-bottom: 0.5rem;
+}
+
+.container .container-wrapper .container-left .container-stories .swiper .swiper-slide div div img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    border: .2rem solid #fff;
+    object-fit: cover;
+}
+
+
+.swiper-btn-next,
+.swiper-btn-prev {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgb(253, 253, 253);
+    color: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    cursor: pointer;
+    z-index: 999;
+    position: absolute;
+    user-select: none;
+}
+
+.swiper-btn-next {
+    right: 1.5rem;
+}
+
+.swiper-btn-prev {
+    left: 1.5rem;
+}
+
+
+/* slide stories starts */
+.slide-stories {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 100000;
+    display: none;
+}
+
+.slide-stories .close {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.slide-stories .slide-logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.slide .slide-items img {
+    max-width: 100%;
+    display: block;
+}
+
+.slide {
+    max-width: 40rem;
+    margin: 5rem auto;
+    display: grid;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.4);
+    z-index: 100000;
+}
+
+.slide-items {
+    position: relative;
+    grid-area: 1/1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    z-index: 100000;
+}
+
+.slide-nav {
+    grid-area: 1/1;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    z-index: 100000;
+}
+
+.slide-nav button {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+}
+
+.slide-items > * {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.slide-items > .active {
+    position: relative;
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.slide-thumb {
+    display: flex;
+    grid-column: 1 / 3;
+}
+
+.slide-thumb > span {
+    flex: 1;
+    display: block;
+    height: 0.3rem;
+    background: rgba(0,0,0,0.4);
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+
+.slide-thumb > span.active::after {
+    content: '';
+    display: block;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0.3rem;
+    transform: translateX(-100%);
+    animation: thumb 5s forwards linear;
+}
+
+@keyframes thumb {
+    to {
+        transform: initial;
+    }
+}
+
+/* slide stories ends */
+
+
+
+
+
+/* post stars */
+.container-posts {
+    width: 100%;
+    display: block;
+}
+
+.container-posts .container-post {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    border: .1rem solid rgb(208, 206, 206);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.container-posts .container-post .post-user {
+    width: 96%;
+    margin: 1.1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+}
+
+.container-posts .container-post .post-user::before {
+    content: '\22EF';
+    width: 1rem;
+    position: absolute;
+    right: 1.5rem;
+    color: gray;
+    font-size: 2.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-user img {
+    width: 3.1rem;
+    height: 3.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-user h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 1.2rem;
+    cursor: pointer;
+}
+
+.container-posts .container-post img {
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
+}
+
+.container-posts .container-post .post-description {
+    display: block;
+    margin-bottom: 0;
+}
+
+.container-posts .container-post .post-description .post-like {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 96%;
+    margin: 1rem auto;
+}
+
+.container-posts .container-post .post-description .post-like ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-posts .container-post .post-description .post-like ul li img {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-description .post-like img {
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-description .post-text {
+    display: block;
+    width: 96%;
+    margin: 1rem auto;
+    margin-bottom: 0;
+}
+
+.container-posts .container-post .post-description .post-text h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-description .post-text p {
+    font-size: 1.5rem;
+    color: rgb(55, 55, 55);
+    margin: 0.4rem 0;
+}
+
+.container-posts .container-post .post-description .post-text p span {
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.container-posts .container-post .post-description .post-text p span:hover {
+    text-decoration: underline;
+}
+
+.container-posts .container-post .post-description .post-text .comment {
+    color: rgb(139, 139, 139);
+    cursor: pointer;
+    margin: 0.8rem 0;
+}
+
+.container-posts .container-post .post-description .post-text .post-item {
+    font-size: 1rem;
+    color: rgb(139, 139, 139);
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+
+.container-posts .container-post .post-comment {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 1.5rem;
+    border-top: .1rem solid rgb(223, 220, 220);
+    margin-top: -2rem;
+}
+
+.container-posts .container-post .post-comment div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container-posts .container-post .post-comment img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.container-posts .container-post .post-comment input::placeholder {
+    overflow: visible;
+    font-size: 1.3rem;
+    color: rgb(139, 139, 139);
+}
+
+.container-posts .container-post .post-comment a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.5;
+    color: cornflowerblue;
+}
+/* post ends */
+
+
+
+/* recommendation starts */
+.container-recommendation {
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: .1rem solid rgb(208, 206, 206);
+    border-radius: 1rem;
+    padding: 2rem;
+    position: relative;
+}
+
+.container-recommendation .recom-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.container-recommendation .recom-text h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
+}
+
+.container-recommendation .recom-text a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: cornflowerblue;
+}
+
+.container-recommendation .swiper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container-recommendation .swiper .swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.container-recommendation .swiper .swiper-slide {
+    border: .1rem solid rgb(208, 206, 206);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.container-recommendation .swiper .swiper-slide .recom-close {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 2.5rem;
+    color: silver;
+    cursor: pointer;
+    user-select: none;
+}
+
+.container-recommendation .swiper .swiper-slide img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 2.5rem 0;
+}
+
+.container-recommendation .swiper .swiper-slide h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.container-recommendation .swiper .swiper-slide p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgb(161, 154, 154);
+}
+
+.container-recommendation .swiper .swiper-slide a {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 0.7rem 2.7rem;
+    border-radius: 0.5rem;
+    background: rgb(69, 142, 255);
+    margin: 2.3rem 0;
+}
+
+.container-recommendation .swiper .swiper-btn-next,
+.container-recommendation .swiper .swiper-btn-prev {
+    background-color: #787878;
+    color: #fff;
+}
+/* recommendation ends */
+
+
+
+
+
+
+/* container right starts */
+.container .container-right {
+    width: 38%;
+    display: block;
+    margin-top: 4rem;
+}
+
+.container-right .right-profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-right .right-profile img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.container-right .right-profile h3 {
+    font-size: 1.4rem; 
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container-right .right-profile a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(69, 142, 255);
+}
+
+.container-right .right-recom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 1.5rem;
+}
+
+.container-right .right-recom h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
+}
+
+.container-right .right-recom a {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.container-right .right-user {
+    width: 97%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.container-right .right-user img {
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.container-right .right-user div h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 1.5;
+    transition: all .3s linear;
+}
+
+.container-right .right-user div h3:hover {
+    text-decoration: underline;
+}
+
+.container-right .right-user div p {
+    font-size: 1.1rem;
+    color: rgb(139, 139, 139);
+}
+
+.container-right .right-user a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgb(69, 142, 255);
+}
+
+.container-right .right-links {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    line-height: 2;
+    width: 95%;
+}
+
+.container-right .right-links a {
+    font-size: 1.1rem;
+    color: rgb(161, 154, 154);
+    margin-right: 1rem;
+    opacity: 0.6;
+    transition: all .3s linear;
+}
+
+.container-right .right-links a:hover {
+    text-decoration: underline;
+}
+
+.container-right .right-license {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: rgb(161, 154, 154);
+    margin-right: 1rem;
+    opacity: 0.6;
+}
+/* container right ends */
+
+
+
+
+
+
+/* media queries starts */
+@media (max-width: 1000px) {
+    html {
+        font-size: 67%;
+    }
+
+    header .header-wrapper {
+        width: 96%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .container .container-wrapper .container-right {
+        display: none;
+        width: 0;
+    }
+
+    .container .container-wrapper .container-left {
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 870px) {
+    html {
+        font-size: 70%;
+    }
+
+    header .header-wrapper .header-search {
+        margin-right: -5rem;
+    }
+
+    .container .container-wrapper .container-left {
+        width: 75%;
+    }
+}
+
+
+@media (max-width: 735px) {
+    .container-posts .container-post .post-comment {
+        display: none;
+    }
+}
+
+
+@media (max-width: 640px) {
+    html {
+        font-size: 85%;
+    }
+
+    header .header-wrapper .header-search {
+        display: none;
+    }
+
+    .container .container-wrapper .container-left {
+        width: 85%;
+    }
+}
+
+
+
+@media (max-width: 550px) {
+    html {
+        font-size: 100%;
+    }
+}
+/* media queries ends */
